@@ -8,6 +8,7 @@ namespace Day9Assignment
 {
     internal class EmployeeWage
     {
+        public static int WagePerHour = 20;
         public static void DisplayMessage()
         {
             Console.WriteLine("Welcome to Employee Wage Computation  Program on Master Branch");
@@ -22,14 +23,19 @@ namespace Day9Assignment
 
         public static void CheckAttendance(int number)
         {
+            int salary = 0;
             if (number == 0)
             {
                 Console.WriteLine("Employee is absent");
+                Console.WriteLine("Salary is " + salary);
             }
             else
             {
-                Console.WriteLine("Employee is present");
+                Console.WriteLine("Employee is present full time");
+                salary = WagePerHour * 8;
             }
+
+            Console.WriteLine("Salary is " + salary);
         }
     }
 }
