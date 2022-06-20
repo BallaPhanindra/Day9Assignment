@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Day9Assignment
+namespace assignment8_1
 {
-    internal class EmployeeWage
+    internal class Day9Assignment
     {
         public const int IsPartTime = 2;
         public const int IsFullTime = 1;
@@ -21,14 +21,18 @@ namespace Day9Assignment
             int WorkingDays = 0;
             int NoOfHrs = 0;
 
-            while (WorkingDays <= 20 && NoOfHrs <= Hrs)
+            while (WorkingDays <= NumberOfDaysPerMonth && NoOfHrs <= Hrs)
             {
-                WorkingDays++;
+
                 Random random = new Random();
                 int number = random.Next(0, 3);
                 EmployeeWage employeeWage = new EmployeeWage();
                 int empHrs = employeeWage.GetEmpHrs(number);
                 NoOfHrs = NoOfHrs + empHrs;
+                if (NoOfHrs != 0)
+                {
+                    WorkingDays++;
+                }
 
                 Totalwage = Totalwage + WagePerHr * empHrs;
             }
